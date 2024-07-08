@@ -12,6 +12,6 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     Run the 'wait_random' function n times, and get all its values
     asynchronously into a list that will be returned
     """
-    tasks = [wait_random(max_delay) for _ in range(n)]
+    tasks = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
     final_list = await asyncio.gather(*tasks)
     return (final_list)
