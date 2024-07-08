@@ -3,7 +3,7 @@
 Create an async function that can be awaited by an asyncio method
 """
 import random
-from time import sleep
+import asyncio
 
 
 async def wait_random(max_delay: int = 10) -> float:
@@ -12,5 +12,5 @@ async def wait_random(max_delay: int = 10) -> float:
     gotten from the random number
     """
     wait_time = random.uniform(0, max_delay)
-    sleep(wait_time)
+    await asyncio.sleep(wait_time)
     return (wait_time)
