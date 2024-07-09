@@ -3,7 +3,7 @@
 Measure the runtime of an async function
 """
 import asyncio
-import time
+from time import time
 from typing import Callable
 async_comprehension: Callable = __import__(
         '1-async_comprehension'
@@ -14,10 +14,9 @@ async def measure_runtime() -> float:
     """
     Run some asynchronous functions and calculate their execution time
     """
-    start_time = time.time()
+    start_time = time()
     await asyncio.gather(
             async_comprehension(), async_comprehension(),
             async_comprehension(), async_comprehension()
     )
-    end_time = time.time()
-    return (end_time - start_time)
+    return time() - start_time
