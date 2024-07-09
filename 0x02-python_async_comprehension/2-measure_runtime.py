@@ -14,7 +14,7 @@ async def measure_runtime() -> float:
     """
     Run some asynchronous functions and calculate their execution time
     """
-    start_time = time()
+    start_time: float = time()
     await asyncio.gather(
             async_comprehension(), async_comprehension(),
             async_comprehension(), async_comprehension()
