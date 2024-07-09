@@ -4,7 +4,10 @@ Measure the runtime of an async function
 """
 import asyncio
 import time
-async_comprehension = __import__('1-async_comprehension').async_comprehension
+from typing import Callable
+async_comprehension: Callable = __import__(
+        '1-async_comprehension'
+).async_comprehension
 
 
 async def measure_runtime() -> float:
